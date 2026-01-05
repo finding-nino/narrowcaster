@@ -1,0 +1,1 @@
+npx vite in terminal om programma te runnen ( r+click op NarrowCaster map) kanker programma
