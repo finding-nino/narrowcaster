@@ -1,0 +1,33 @@
+body {
+  height: 100%;
+  
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+.container{
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    display: flex;
+}
+.frankrijk{
+    position: relative;
+    top: 1600px;
+    left: 900px;
+}
+.piste{
+    width: 1700px;
+    height: 1200px;
+    position: relative;
+    left: -1000px;
+    top: 200px;
+}
+a{
+    font-size: 100px;
+    font-style: normal, bold;
+    position: relative;
+    top: 1500px;
+    left: -2000px;
+}

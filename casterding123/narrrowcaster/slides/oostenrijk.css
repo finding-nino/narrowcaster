@@ -1,0 +1,35 @@
+body {
+  height: 100%;
+  
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+.container{
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    display: flex;
+}
+.oostenrijk{
+    height: 400px;
+    width: 400px;
+    position: relative;
+    top: 500px;
+    left: 350px;
+}
+.apresski{
+    width: 500px;
+    height: 300px;
+    position: relative;
+    left: -100px;
+    top: 50px;
+}
+a{
+    font-size: 50px;
+    font-style: normal, bold;
+    position: relative;
+    top: 375px;
+    left: -450px;
+}
