@@ -24,10 +24,29 @@ body {
     left: -1000px;
     top: 200px;
 }
-a{
-    font-size: 200px;
-    font-style: normal, bold;
-    position: relative;
-    top: 1600px;
-    left: -2300px;
+.ticker {
+    position: absolute;
+    bottom: 50%;
+    width: 100%;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px 0;
+}
+
+.ticker-text {
+    color: white;
+    font-size: 2rem;
+    white-space: nowrap;
+    display: inline-block;
+    padding-left: 100%;
+    animation: scroll-text 12s linear infinite;
+}
+
+@keyframes scroll-text {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
 }
