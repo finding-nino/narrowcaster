@@ -1,0 +1,35 @@
+{
+    "defaultDuration" : 20000,
+    "slides": [
+        {
+            "type": "",
+            "src": "slides/duitsland.html"
+        },
+        {
+            "type": "",
+            "src": "slides/frankrijk.html"
+        },
+        {
+            "type": "",
+            "src": "slides/italie.html"
+        },
+        {
+            "type": "",
+            "src": "slides/landgraaf.html",
+            "duration": 500
+        },
+        {
+            "type": "",
+            "src": "slides/oostenrijk.html"
+        },
+        {
+            "type": "",
+            "src": "slides/zwitserland.html"
+        },
+        {
+            "type": "",
+            "src": "slides/tsjechië.html"
+        }
+
+    ]
+}
