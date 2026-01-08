@@ -2,7 +2,7 @@ let slides = [];
 let currentIndex = 0;
 let defaultDuration = 8000;
 
-fetch("slides.json")
+fetch("/slides.json")
   .then(response => response.json())
   .then(data => {
     slides = data.slides;
@@ -49,3 +49,4 @@ function nextSlide() {
   currentIndex = (currentIndex + 1) % slides.length;
   showSlide();
 }
+
