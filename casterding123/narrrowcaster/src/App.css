@@ -1,42 +1,244 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+.slideshow-container {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.2) 0%,
+    rgba(0, 0, 0, 0.4) 100%
+  );
+}
+
+.content {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 60px;
+  box-sizing: border-box;
+}
+
+/* Title Section - Top Left */
+.title-section {
+  position: absolute;
+  top: 60px;
+  left: 60px;
+}
+
+.main-title {
+  font-size: 4rem;
+  font-weight: 700;
+  color: white;
+  margin: 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: white;
+  margin: 10px 0 0 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  opacity: 0.95;
+}
+
+/* Weather Widget - Top Right */
+.weather-widget {
+  position: absolute;
+  top: 60px;
+  right: 60px;
+  background: rgba(135, 206, 250, 0.85);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 20px 30px;
+  min-width: 160px;
   text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.weather-label {
+  font-size: 0.9rem;
+  color: white;
+  font-weight: 500;
+  margin-bottom: 8px;
+  opacity: 0.95;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.weather-temp {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: white;
+  line-height: 1;
+}
+
+/* Bottom Left Content */
+.bottom-left-content {
+  position: absolute;
+  bottom: 120px;
+  left: 60px;
+  max-width: 600px;
+}
+
+.description {
+  font-size: 1.25rem;
+  color: white;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+.category-buttons {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.category-button {
+  background: rgba(50, 50, 50, 0.8);
+  backdrop-filter: blur(10px);
+  border: none;
+  border-radius: 50px;
+  padding: 12px 24px;
+  color: white;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.category-button:hover {
+  background: rgba(70, 70, 70, 0.9);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.category-button:active {
+  transform: translateY(0);
+}
+
+/* Pagination - Bottom Right */
+.pagination {
+  position: absolute;
+  bottom: 120px;
+  right: 60px;
+  background: rgba(50, 50, 50, 0.8);
+  backdrop-filter: blur(10px);
+  border-radius: 50px;
+  padding: 12px 24px;
+  color: white;
+  font-size: 1rem;
+  font-weight: 500;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Progress Bar */
+.progress-bar-container {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 20;
+}
+
+.progress-bar-item {
+  width: 40px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.progress-bar-item.active {
+  background: white;
+  height: 5px;
+  width: 50px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .content {
+    padding: 40px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .title-section {
+    top: 40px;
+    left: 40px;
+  }
+
+  .main-title {
+    font-size: 3rem;
+  }
+
+  .weather-widget {
+    top: 40px;
+    right: 40px;
+    padding: 15px 20px;
+  }
+
+  .weather-temp {
+    font-size: 2rem;
+  }
+
+  .bottom-left-content {
+    bottom: 100px;
+    left: 40px;
+    max-width: 500px;
+  }
+
+  .description {
+    font-size: 1.1rem;
+  }
+
+  .pagination {
+    bottom: 100px;
+    right: 40px;
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+@media (max-width: 768px) {
+  .main-title {
+    font-size: 2.5rem;
   }
-}
 
-.card {
-  padding: 2em;
-}
+  .subtitle {
+    font-size: 1.2rem;
+  }
 
-.read-the-docs {
-  color: #888;
+  .description {
+    font-size: 1rem;
+  }
+
+  .category-button {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
 }
